@@ -1,0 +1,20 @@
+@import "./base.css";
+@font-face {
+  font-family: "Satoshi", sans-serif;
+  src: url(https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap);
+}
+
+#app {
+  max-width: 100rem;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #dfdfdf;
+}
+
+li {
+  list-style: none;
+}
