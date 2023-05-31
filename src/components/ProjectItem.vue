@@ -50,6 +50,9 @@ li h1 {
 }
 
 .container {
+  display: grid;
+  flex-direction: column;
+  height: 100%;
   background-color: #161616;
   padding: 1rem;
   border: solid 1px #505050;
@@ -66,6 +69,7 @@ li p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-self: flex-end;
 }
 
 .icons div {
