@@ -17,10 +17,10 @@
       <h1>Hi, I'm Gerardo</h1>
       <p>
         I have 6 months of hands-on experience working on personal projects utilizing cutting-edge
-        technologies such as <strong>React</strong> and <strong>TypeScript</strong>. Currently, I
-        am actively expanding my skill set by learning <strong>Vue 3</strong>, as demonstrated by
-        the creation of this <a href='https://github.com/Ch1py7/Portfolio-v2'>portfolio</a>. In
-        addition, I possess some knowledge in scripting languages such as <strong>Bash</strong> and
+        technologies such as <strong>React</strong> and <strong>TypeScript</strong>.</p> <p>Currently,
+        I am actively expanding my skill set by learning <strong>Vue 3</strong>, as demonstrated by
+        the creation of this <a href='https://github.com/Ch1py7/Portfolio-v2'>portfolio</a>.</p>
+        <p>In addition, I possess some knowledge in scripting languages such as <strong>Bash</strong> and
         <strong>Python</strong>.
       </p>
     </div>
@@ -78,7 +78,7 @@ section div {
 
 section h1 {
   color: #fdfdfd;
-  filter: drop-shadow(0 0 3px red);
+  filter: drop-shadow(0 0 3px #ff0000);
   font-size: 2.8rem;
   font-weight: 500;
 }
@@ -96,14 +96,15 @@ span {
 }
 
 p a {
-  color: #ffffff;
+  color: #ba59f7;
   font-weight: bold;
   transition: filter 0.1s linear;
   text-decoration: underline;
+  text-decoration-style: solid;
 }
 
 p a:hover {
-  filter: drop-shadow(0 0 2px red);
+  filter: drop-shadow(0 0 2px #8000ff);
 }
 
 @media (max-width: 768px) {
