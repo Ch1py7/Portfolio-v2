@@ -73,7 +73,6 @@ section div {
   display: flex;
   justify-self: center;
   flex-direction: column;
-  gap: 2rem;
 }
 
 section h1 {
@@ -81,11 +80,13 @@ section h1 {
   filter: drop-shadow(0 0 3px #ff0000);
   font-size: 2.8rem;
   font-weight: 500;
+  margin-bottom: 1.6rem;
 }
 
 section p {
   font-weight: 300;
   font-size: 1.8rem;
+  margin: 3px 0;
 }
 
 span {
