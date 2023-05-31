@@ -21,3 +21,13 @@
     </g>
   </svg>
 </template>
+
+<style scoped>
+svg {
+  transition: filter 0.2s ease-in-out;
+}
+
+svg:hover {
+  filter: drop-shadow(0 0 1px #e1e1e1);
+}
+</style>

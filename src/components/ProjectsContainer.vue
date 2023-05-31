@@ -12,6 +12,7 @@ import Project from './ProjectItem.vue'
 import ReactIcon from './icons/ReactIcon.vue'
 import TypeScript from './icons/TypeScript.vue'
 import StyledComponents from './icons/StyledComponents.vue'
+import Python from './icons/PythonIcon.vue'
 
 const props = [
   {
@@ -51,6 +52,15 @@ const props = [
       { icon: StyledComponents }
     ]
   },
+  {
+    id: 4,
+    title: 'SSTI Payload Generator',
+    description:
+      'A simple python script to generate payloads for Server Side Template Injection vulnerabilities.',
+    link: 'https://app.hackthebox.com/machines/481',
+    repo: 'https://github.com/Ch1py7/redPanda-Script',
+    techs: [{ icon: Python }],
+  },
 ]
 </script>
 
@@ -66,14 +76,9 @@ h1 {
 }
 
 ul {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(40rem, 100%), 1fr));
+  align-items: stretch;
   gap: 2rem;
-}
-
-@media (max-width: 430px) {
-  section {
-    grid-column: 1 / 2;
-  }
 }
 </style>
