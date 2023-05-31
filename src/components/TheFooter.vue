@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     height: 8rem;
-    margin-top: 12rem;
+    margin-top: 2rem;
     font-size: 1.8rem;
     text-align: center;
   }
