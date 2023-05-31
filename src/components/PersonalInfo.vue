@@ -38,7 +38,7 @@ section {
   display: grid;
   grid-template-columns: 3fr 4fr;
   place-items: center;
-  padding: 2rem 1rem 4rem;
+  padding: 4rem 1rem 4rem;
   font-family: 'Satoshi';
 }
 

@@ -66,6 +66,9 @@ const props = [
 
 <style scoped>
 section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   grid-column: 1 / 2;
 }
 
