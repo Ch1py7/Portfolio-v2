@@ -2,12 +2,14 @@
 import NavBar from './components/NavBar.vue'
 import PersonalInfo from './components/PersonalInfo.vue'
 import ProjectsContainer from './components/ProjectsContainer.vue'
+import Footer from './components/TheFooter.vue'
 </script>
 
 <template>
   <NavBar />
   <PersonalInfo />
   <ProjectsContainer />
+  <Footer />
 </template>
 
 <style scoped>
