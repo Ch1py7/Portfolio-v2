@@ -16,7 +16,7 @@
     <div>
       <h1>Hi, I'm Gerardo</h1>
       <p>
-        I have 6 months of hands-on experience working on personal projects utilizing cutting-edge
+        I have 1 year of hands-on experience working on personal projects utilizing cutting-edge
         technologies such as <strong>React</strong> and <strong>TypeScript</strong>.</p> <p>Currently,
         I am actively expanding my skill set by learning <strong>Vue 3</strong>, as demonstrated by
         the creation of this <a href='https://github.com/Ch1py7/Portfolio-v2'>portfolio</a>.</p>
