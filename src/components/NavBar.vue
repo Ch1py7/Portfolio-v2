@@ -17,11 +17,6 @@
           Github
         </a>
       </li>
-      <li>
-        <a href='https://twitter.com/Bulbsum' target='_BLANK' rel='noreferrer'>
-          Twitter
-        </a>
-      </li>
     </ol>
     <ListItem @click='menu = !menu'/>
     <ol v-show='menu' class='isShow'>
