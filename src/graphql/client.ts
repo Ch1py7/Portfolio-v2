@@ -1,12 +1,8 @@
-import {
-  ApolloClient,
-  ApolloQueryResult,
-  InMemoryCache,
-  createHttpLink,
-} from '@apollo/client/core'
-import { setContext } from '@apollo/client/link/context'
 import { createApolloProvider } from '@vue/apollo-option'
-import gql from 'graphql-tag'
+import { ApolloClient, ApolloQueryResult, InMemoryCache } from 'apollo-boost'
+import { setContext } from 'apollo-link-context'
+import { createHttpLink } from 'apollo-link-http'
+import { gql } from 'graphql-tag'
 import { Data } from '../types/Graphql.types'
 
 export const getApiData = async () => {
@@ -32,41 +28,40 @@ export const getApiData = async () => {
     defaultClient: apolloClient,
   })
 
-  const { data, loading, error }: ApolloQueryResult<Data> =
-    await apolloClient.query({
-      query: gql`
-        {
-          viewer {
-            login
-          }
-          user(login: "Ch1py7") {
-            pinnedItems(first: 6) {
-              totalCount
-              edges {
-                node {
-                  ... on Repository {
-                    id
-                    name
-                    url
-                    languages(first: 10) {
-                      edges {
-                        node {
-                          id
-                          name
-                          color
-                        }
+  const { data, loading }: ApolloQueryResult<Data> = await apolloClient.query({
+    query: gql`
+      {
+        viewer {
+          login
+        }
+        user(login: "Ch1py7") {
+          pinnedItems(first: 6) {
+            totalCount
+            edges {
+              node {
+                ... on Repository {
+                  id
+                  name
+                  url
+                  languages(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                        color
                       }
                     }
-                    description
-                    homepageUrl
                   }
+                  description
+                  homepageUrl
                 }
               }
             }
           }
         }
-      `,
-    })
+      }
+    `,
+  })
 
-  return { apolloProvider, data, loading, error }
+  return { apolloProvider, data, loading }
 }

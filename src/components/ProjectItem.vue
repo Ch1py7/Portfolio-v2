@@ -39,7 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import { Languages as jesucristo } from '../types/Graphql.types'
 import TechnologieIcon from './TechnologieIcon.vue'
 import Github from './icons/GitHub.vue'
 import LinkChain from './icons/LinkChain.vue'
@@ -49,7 +48,14 @@ defineProps<{
   description: string
   homepageUrl: string
   url: string
-  languages: jesucristo
+  languages: {
+    edges: {
+      node: {
+        name: string
+        color: string
+      }
+    }[]
+  }
 }>()
 </script>
 
