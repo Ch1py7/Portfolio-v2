@@ -7,7 +7,7 @@
   </section>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import Project from './ProjectItem.vue'
 import Python from './icons/PythonIcon.vue'
 

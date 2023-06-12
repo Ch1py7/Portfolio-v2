@@ -1,55 +1,56 @@
 <template>
   <nav>
-    <a href='#'><img src='../assets/bulbsum.webp' alt='bulbsum'/></a>
-    <ol class='menu'>
+    <a href="#"><img src="../assets/bulbsum.webp" alt="bulbsum" /></a>
+    <ol class="menu">
       <li>
-        <a href='/Gerardo CV.pdf' target='_BLANK' rel='noreferrer'>
-          CV
-        </a>
+        <a href="/Gerardo CV.pdf" target="_BLANK" rel="noreferrer">CV</a>
       </li>
       <li>
-        <a href='https://www.linkedin.com/in/gerardogarcialopez-bulbsum/' target='_BLANK' rel='noreferrer'>
-          LinkedIn
-        </a>
+        <a
+          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+          target="_BLANK"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
       </li>
       <li>
-        <a href='https://github.com/Ch1py7' target='_BLANK' rel='noreferrer'>
-          Github
-        </a>
+        <a href="https://github.com/Ch1py7" target="_BLANK" rel="noreferrer"
+          >Github</a
+        >
       </li>
     </ol>
-    <ListItem @click='menu = !menu'/>
-    <ol v-show='menu' class='isShow'>
+    <ListItem @click="menu = !menu" />
+    <ol v-show="menu" class="isShow">
       <li>
-        <a href='/Gerardo CV.pdf' target='_BLANK' rel='noreferrer'>
-          CV
-        </a>
+        <a href="/Gerardo CV.pdf" target="_BLANK" rel="noreferrer">CV</a>
       </li>
       <li>
-        <a href='https://www.linkedin.com/in/gerardogarcialopez-bulbsum/' target='_BLANK' rel='noreferrer'>
-          LinkedIn
-        </a>
+        <a
+          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+          target="_BLANK"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
       </li>
       <li>
-        <a href='https://github.com/Ch1py7' target='_BLANK' rel='noreferrer'>
-          Github
-        </a>
+        <a href="https://github.com/Ch1py7" target="_BLANK" rel="noreferrer"
+          >Github</a
+        >
       </li>
       <li>
-        <a href='https://twitter.com/Bulbsum' target='_BLANK' rel='noreferrer'>
-          Twitter
-        </a>
+        <a href="https://twitter.com/Bulbsum" target="_BLANK" rel="noreferrer"
+          >Twitter</a
+        >
       </li>
     </ol>
   </nav>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { ref } from 'vue'
 import ListItem from './icons/ListItem.vue'
 
 const menu = ref<boolean>(false)
-
 </script>
 
 <style scoped>
