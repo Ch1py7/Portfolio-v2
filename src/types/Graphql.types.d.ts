@@ -21,7 +21,7 @@ export interface PinnedItemsEdge {
 }
 
 export interface PurpleNode {
-  description: null | string
+  description: string
   homepageUrl: string
   id: string
   languages: Languages

@@ -17,7 +17,7 @@
           <TechnologieIcon
             v-for="tech in languages.edges"
             v-bind="tech.node"
-            :key="tech.node"
+            :key="tech.node.id"
           />
         </div>
         <div>
@@ -53,6 +53,7 @@ defineProps<{
       node: {
         name: string
         color: string
+        id: string
       }
     }[]
   }

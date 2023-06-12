@@ -4,7 +4,7 @@
     <ul>
       <Project
         v-for="prop in props.user.pinnedItems.edges"
-        :key="prop.node"
+        :key="prop.node.id"
         v-bind="prop.node"
       />
     </ul>
