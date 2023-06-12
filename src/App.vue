@@ -9,9 +9,7 @@ import Footer from './components/TheFooter.vue'
 <template>
   <NavBar />
   <PersonalInfo />
-  <Suspense>
-    <ProjectsContainer />
-  </Suspense>
+  <ProjectsContainer />
   <Footer />
   <Canvas />
 </template>

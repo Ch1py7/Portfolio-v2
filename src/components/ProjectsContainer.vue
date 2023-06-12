@@ -3,7 +3,7 @@
     <h1>Projects</h1>
     <ul>
       <Project
-        v-for="prop in props.user.pinnedItems.edges"
+        v-for="prop in props?.user.pinnedItems.edges"
         :key="prop.node.id"
         v-bind="prop.node"
       />
@@ -12,9 +12,17 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { getApiData } from '../graphql/client'
 import Project from './ProjectItem.vue'
-const { data: props } = await getApiData()
+import { Data } from '../types/Graphql.types'
+
+const props = ref<Data>()
+
+onMounted(async () => {
+  const { data } = await getApiData()
+  props.value = data
+})
 </script>
 
 <style scoped>
