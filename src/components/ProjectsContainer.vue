@@ -2,66 +2,27 @@
   <section>
     <h1>Projects</h1>
     <ul>
-      <Project v-for='prop in props' :key='prop.id' v-bind='prop' />
+      <Project
+        v-for="prop in props?.user.pinnedItems.edges"
+        :key="prop.node.id"
+        v-bind="prop.node"
+      />
     </ul>
   </section>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { getApiData } from '../graphql/client'
 import Project from './ProjectItem.vue'
-import ReactIcon from './icons/ReactIcon.vue'
-import TypeScript from './icons/TypeScript.vue'
-import StyledComponents from './icons/StyledComponents.vue'
-import Python from './icons/PythonIcon.vue'
+import { Data } from '../types/Graphql.types'
 
-const props = [
-  {
-    id: 1,
-    title: 'Afordibot',
-    description:
-      'Twitch Hackathon Winner: Twitch Bot Data App with React, TypeScript, and Styled-Components.',
-    repo: 'https://github.com/Afordin/afordibot-web',
-    link: 'https://afordibot.com/',
-    techs: [
-      { icon: ReactIcon },
-      { icon: TypeScript },
-      { icon: StyledComponents }
-    ]
-  },
-  {
-    id: 2,
-    title: 'PokeCards',
-    description: 'Pokemon app to see details about your favorites pokemon.',
-    repo: 'https://github.com/Ch1py7/pokecards',
-    link: 'https://pokecards-theta.vercel.app/',
-    techs: [
-      { icon: ReactIcon },
-      { icon: TypeScript },
-      { icon: StyledComponents }
-    ]
-  },
-  {
-    id: 3,
-    title: 'G-Gif',
-    description: 'Gif search engine that works with the giphy API.',
-    repo: 'https://github.com/Ch1py7/g-gif',
-    link: 'https://g-gif.vercel.app/',
-    techs: [
-      { icon: ReactIcon },
-      { icon: TypeScript },
-      { icon: StyledComponents }
-    ]
-  },
-  {
-    id: 4,
-    title: 'SSTI Payload Generator',
-    description:
-      'A simple python script to generate payloads for Server Side Template Injection vulnerabilities.',
-    link: 'https://app.hackthebox.com/machines/481',
-    repo: 'https://github.com/Ch1py7/redPanda-Script',
-    techs: [{ icon: Python }],
-  },
-]
+const props = ref<Data>()
+
+onMounted(async () => {
+  const { data } = await getApiData()
+  props.value = data
+})
 </script>
 
 <style scoped>

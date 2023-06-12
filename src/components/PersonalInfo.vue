@@ -1,33 +1,53 @@
 <template>
   <section>
-    <div @click="isClick = !isClick" class="imgContainer" @mouseover="hover = true" @mouseleave="hover = false">
-      <img v-if='isClick' src='../assets/bulbsum.webp'/> <!-- TODO: Add personal photo-->
+    <div
+      @click="isClick = !isClick"
+      class="imgContainer"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+    >
+      <img v-if="isClick" src="../assets/bulbsum.webp" />
+      <!-- TODO: Add personal photo-->
       <template v-else>
-        <div class='b75vg4' v-show='hover'>
-          <img  src='/src/assets/bulbsum_thumbsup.png' />
-          <span class='pas8d7' style='width: 12rem;'>HIRE ME</span>
+        <div class="b75vg4" v-show="hover">
+          <img src="/src/assets/bulbsum_thumbsup.png" />
+          <span class="pas8d7" style="width: 12rem">HIRE ME</span>
         </div>
-        <div class='b75vg4' v-show='!hover'>
-          <img src='/src/assets/bulbsum_cry.png' />
-          <span class='pas8d7' style='width: 11rem;'>PLEASE</span>
+        <div class="b75vg4" v-show="!hover">
+          <img src="/src/assets/bulbsum_cry.png" />
+          <span class="pas8d7" style="width: 11rem">PLEASE</span>
         </div>
       </template>
     </div>
     <div>
       <h1>Hi, I'm Gerardo</h1>
       <p>
-        I have 1 year of hands-on experience working on personal projects utilizing cutting-edge
-        technologies such as <strong>React</strong> and <strong>TypeScript</strong>.</p> <p>Currently,
-        I am actively expanding my skill set by learning <strong>Vue 3</strong>, as demonstrated by
-        the creation of this <a href='https://github.com/Ch1py7/Portfolio-v2'>portfolio</a>.</p>
-        <p>In addition, I possess some knowledge in scripting languages such as <strong>Bash</strong> and
-        <strong>Python</strong>.
+        I have 1 year of hands-on experience working on personal projects
+        utilizing cutting-edge technologies such as
+        <strong>React</strong>
+        and
+        <strong>TypeScript</strong>
+        .
+      </p>
+      <p>
+        Currently, I am actively expanding my skill set by learning
+        <strong>Vue 3</strong>
+        , as demonstrated by the creation of this
+        <a href="https://github.com/Ch1py7/Portfolio-v2">portfolio</a>
+        .
+      </p>
+      <p>
+        In addition, I possess some knowledge in scripting languages such as
+        <strong>Bash</strong>
+        and
+        <strong>Python</strong>
+        .
       </p>
     </div>
   </section>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { ref } from 'vue'
 const hover = ref<boolean>(false)
 const isClick = ref<boolean>(true)
@@ -58,7 +78,7 @@ section {
 
 .pas8d7 {
   justify-self: center;
-  background-color: #dfdfdfaa; 
+  background-color: #dfdfdfaa;
   color: #050505;
   border-radius: 1rem;
 }

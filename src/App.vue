@@ -1,9 +1,9 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import NavBar from './components/NavBar.vue'
 import PersonalInfo from './components/PersonalInfo.vue'
 import ProjectsContainer from './components/ProjectsContainer.vue'
-import Footer from './components/TheFooter.vue'
 import Canvas from './components/TheCanvas.vue'
+import Footer from './components/TheFooter.vue'
 </script>
 
 <template>
@@ -15,7 +15,9 @@ import Canvas from './components/TheCanvas.vue'
 </template>
 
 <style scoped>
-nav, section, main {
+nav,
+section,
+main {
   animation: unvanish 0.8s ease-in-out;
 }
 
