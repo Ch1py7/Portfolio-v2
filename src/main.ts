@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
-import './assets/main.css'
 import App from './App.vue'
+import './assets/main.css'
+import { getApiData } from './graphql/client'
 
-createApp(App).mount('#app')
+const { apolloProvider } = await getApiData()
+
+createApp(App).use(apolloProvider).mount('#app')
