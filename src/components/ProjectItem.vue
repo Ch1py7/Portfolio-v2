@@ -7,7 +7,7 @@
       target="_BLANK"
       rel="noreferrer"
       class="container"
-      :style="`background-color: ${isLight ? '#a1a1a1' : '#161616'}; color: ${
+      :style="`background-color: ${isLight ? '#cae4f9' : '#161616'}; color: ${
         isLight ? '#161616' : '#dfdfdf'
       }`"
     >
@@ -102,6 +102,7 @@ defineProps<{
 
 .container:hover {
   border: solid 1px #9038ee;
+  transform: translateY(-1rem)
 }
 
 li p {

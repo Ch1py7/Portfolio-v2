@@ -152,7 +152,7 @@ const mask = computed(() => 'radial-gradient(circle, transparent, black);')
     class="canvas"
     :style="`mask-image: ${mask};--webkit-mask-image: ${mask}; background: ${
       isLight
-        ? 'radial-gradient(circle at -50rem 380rem, #0015ff 50%, #dfdfdf 100%)'
+        ? 'radial-gradient(circle at -50rem 380rem, #0015ff 50%, #f3f7fd 100%)'
         : 'radial-gradient(circle at -50rem 380rem, #47008d 0%, #050505 85%)'
     }`"
   >
