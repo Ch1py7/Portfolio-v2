@@ -77,6 +77,7 @@ defineProps<{
   font-size: 2.4rem;
   text-align: start;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .container {
