@@ -1,9 +1,17 @@
+<script setup lang="ts">
+import { inject } from 'vue'
+import { LightMode } from '../../types/GeneralTypes'
+
+const { isLight } = inject<LightMode>('isLight')!
+</script>
+
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
     viewBox="0 0 24 24"
+    :class='isLight ? "light" : "dark"'
   >
     <g
       fill="none"
@@ -26,7 +34,11 @@ svg {
   transition: filter 0.2s ease-in-out;
 }
 
-svg:hover {
-  filter: drop-shadow(0 0 1px #e1e1e1);
+svg.light:hover {
+  filter: drop-shadow(0 0 2px #7300ff);
+}
+
+svg.dark:hover {
+  filter: drop-shadow(0 0 2px #e1e1e1);
 }
 </style>

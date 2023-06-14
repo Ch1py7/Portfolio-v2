@@ -10,7 +10,8 @@ defineProps<{
 
 <template>
   <button
-    ttitle="button"
+    :aria-label="mode.value ? 'second mode' : 'first mode'"
+    :title="mode.value ? 'second mode' : 'first mode'"
     type="button"
     @click="toggle"
     :class="{ active: mode.value === true }"
@@ -31,6 +32,7 @@ button {
   border: solid 1px #343434;
   border-radius: 2.2rem;
   background-color: #2b2b2b;
+  cursor: pointer;
 }
 
 span {

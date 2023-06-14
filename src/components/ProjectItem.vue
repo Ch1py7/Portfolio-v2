@@ -1,18 +1,19 @@
 <template>
   <li>
-    <div
+    <a
+      :href="homepageUrl ? homepageUrl : url"
+      :aria-label="`go to ${name}`"
+      :title="`go to ${name}`"
+      target="_BLANK"
+      rel="noreferrer"
       class="container"
-      :style="`background-color: ${isLight ? '#a1a1a1' : '#161616'}`"
+      :style="`background-color: ${isLight ? '#cae4f9' : '#161616'}; color: ${
+        isLight ? '#161616' : '#dfdfdf'
+      }`"
     >
-      <a
-        :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-        class="projectName"
-        :href="homepageUrl"
-        target="_BLANK"
-        rel="noreferrer"
-      >
+      <h3 class="projectName">
         {{ name }}
-      </a>
+      </h3>
       <p>
         {{ description }}
       </p>
@@ -28,17 +29,25 @@
           <a
             v-if="homepageUrl"
             :href="homepageUrl"
+            :aria-label="`go to ${name} repository`"
+            :title="`go to ${name} repository`"
             target="_BLANK"
             rel="noreferrer"
           >
             <LinkChain :style="`stroke: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
-          <a :href="url" target="_BLANK" rel="noreferrer">
+          <a
+            :href="url"
+            target="_BLANK"
+            rel="noreferrer"
+            :aria-label="`go to ${name} repository`"
+            :title="`go to ${name} repository`"
+          >
             <Github :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
         </div>
       </div>
-    </div>
+    </a>
   </li>
 </template>
 
@@ -74,9 +83,11 @@ defineProps<{
   align-items: center;
   padding: 0 1rem;
   gap: 1rem;
+  font-family: 'Satoshi-Bold';
   font-size: 2.4rem;
   text-align: start;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .container {
@@ -91,6 +102,7 @@ defineProps<{
 
 .container:hover {
   border: solid 1px #9038ee;
+  transform: translateY(-1rem)
 }
 
 li p {
