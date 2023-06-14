@@ -13,9 +13,6 @@ html {
 
 body {
   min-height: 100vh;
-  color: #dfdfdf;
-  background: radial-gradient(circle at -50rem 380rem, #47008d 0%, #050505 85%);
-  padding: 0 1rem;
   line-height: 1.6;
   font-family: "Satoshi";
   text-rendering: optimizeLegibility;
