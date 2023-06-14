@@ -76,23 +76,16 @@
 
 <script setup lang="ts">
 import { inject, ref } from 'vue'
-import { Language, LightMode } from '../types/GeneralTypes'
+import { LightMode } from '../types/GeneralTypes'
 import TheButton from './TheButton.vue'
-import EnglishFlag from './icons/EnglishFlag.vue'
 import ListItem from './icons/ListItem.vue'
 import MoonIcon from './icons/MoonIcon.vue'
-import SpanishFlag from './icons/SpanishFlag.vue'
 import SunIcon from './icons/SunIcon.vue'
 
 const { isLight } = inject<LightMode>('isLight')!
-const { language } = inject<Language>('language')!
 
 const setLight = () => {
   isLight.value = !isLight.value
-}
-
-const setLanguage = () => {
-  language.value = !language.value
 }
 
 const props = [
@@ -102,13 +95,6 @@ const props = [
     firstMode: SunIcon,
     secMode: MoonIcon,
     toggle: setLight,
-  },
-  {
-    id: 2,
-    mode: language,
-    firstMode: SpanishFlag,
-    secMode: EnglishFlag,
-    toggle: setLanguage,
   },
 ]
 
