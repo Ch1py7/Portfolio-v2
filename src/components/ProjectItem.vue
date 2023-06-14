@@ -1,18 +1,18 @@
 <template>
   <li>
-    <div
+    <a
+      :href="homepageUrl ? homepageUrl : url"
+      :aria-label="name"
+      target="_BLANK"
+      rel="noreferrer"
       class="container"
-      :style="`background-color: ${isLight ? '#a1a1a1' : '#161616'}`"
+      :style="`background-color: ${isLight ? '#a1a1a1' : '#161616'}; color: ${
+        isLight ? '#161616' : '#dfdfdf'
+      }`"
     >
-      <a
-        :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-        class="projectName"
-        :href="homepageUrl"
-        target="_BLANK"
-        rel="noreferrer"
-      >
+      <h3 class="projectName">
         {{ name }}
-      </a>
+      </h3>
       <p>
         {{ description }}
       </p>
@@ -38,7 +38,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </a>
   </li>
 </template>
 
@@ -74,6 +74,7 @@ defineProps<{
   align-items: center;
   padding: 0 1rem;
   gap: 1rem;
+  font-family: 'Satoshi-Bold';
   font-size: 2.4rem;
   text-align: start;
   font-weight: 700;

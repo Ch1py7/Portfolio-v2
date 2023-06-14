@@ -6,21 +6,42 @@
       @mouseover="hover = true"
       @mouseleave="hover = false"
     >
-      <img v-if="isClick" src="../assets/bulbsum.webp" />
+      <img
+        v-if="isClick"
+        src="../assets/bulbsum.webp"
+        alt="Gerardo"
+        aria-label="Gerardo"
+      />
       <!-- TODO: Add personal photo-->
       <template v-else>
         <div class="b75vg4" v-show="hover">
-          <img src="/src/assets/bulbsum_thumbsup.png" />
+          <img
+            src="/src/assets/bulbsum_thumbsup.png"
+            alt="picHireMe"
+            aria-label="bulbsum hire me"
+          />
           <span class="pas8d7" style="width: 12rem">HIRE ME</span>
         </div>
         <div class="b75vg4" v-show="!hover">
-          <img src="/src/assets/bulbsum_cry.png" />
+          <img
+            src="/src/assets/bulbsum_cry.png"
+            alt="picPlease"
+            aria-label="bulbsum please"
+          />
           <span class="pas8d7" style="width: 11rem">PLEASE</span>
         </div>
       </template>
     </div>
     <div>
-      <h1>Hi, I'm Gerardo</h1>
+      <h1
+        :style="`color: ${isLight ? '#161616' : '#dfdfdf'}; filter: ${
+          isLight
+            ? 'drop-shadow(0 0 3px #00d9ff)'
+            : 'drop-shadow(0 0 3px #ff0000)'
+        };`"
+      >
+        Hi, I'm Gerardo
+      </h1>
       <p>
         I have 1 year of hands-on experience working on personal projects
         utilizing cutting-edge technologies such as
@@ -33,7 +54,13 @@
         Currently, I am actively expanding my skill set by learning
         <strong>Vue 3</strong>
         , as demonstrated by the creation of this
-        <a href="https://github.com/Ch1py7/Portfolio-v2">portfolio</a>
+        <a
+          href="https://github.com/Ch1py7/Portfolio-v2"
+          target="_BLANK"
+          rel="noreferrer"
+          aria-label="portfolio"
+          >portfolio</a
+        >
         .
       </p>
       <p>
@@ -102,7 +129,7 @@ section div {
 
 section h1 {
   color: #fdfdfd;
-  filter: drop-shadow(0 0 3px #ff0000);
+  font-family: 'Satoshi-Bold';
   font-size: 2.8rem;
   font-weight: 500;
   margin-bottom: 1.6rem;

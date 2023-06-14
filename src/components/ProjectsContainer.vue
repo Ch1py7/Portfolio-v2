@@ -1,6 +1,6 @@
 <template>
   <section :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
-    <h1>Projects</h1>
+    <h2>Projects</h2>
     <ul>
       <Project
         v-for="prop in data.user.pinnedItems.edges"
@@ -31,13 +31,13 @@ section {
   gap: 4rem;
 }
 
-h1 {
+h2 {
   padding-left: 2rem;
   font-size: 8rem;
 }
 
 @media (max-width: 768px) {
-  h1 {
+  h2 {
     padding: 0;
     text-align: center;
   }

@@ -1,11 +1,14 @@
 <template>
   <nav>
-    <a href="#"><img src="../assets/bulbsum.webp" alt="bulbsum" /></a>
-    <template style="display: flex; align-items: center; gap: 2rem;">
+    <a href="#" title="home"
+      ><img src="../assets/bulbsum.webp" alt="logo" aria-label="home"
+    /></a>
+    <template style="display: flex; align-items: center; gap: 2rem">
       <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
       <ol class="menu">
         <li>
           <a
+            title="Go to my CV"
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
             href="/Gerardo CV.pdf"
             target="_BLANK"
@@ -15,6 +18,7 @@
         </li>
         <li>
           <a
+            title="Go to my LinkedIn"
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
             href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
             target="_BLANK"
@@ -24,6 +28,7 @@
         </li>
         <li>
           <a
+            title="Go to my Github"
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
             href="https://github.com/Ch1py7"
             target="_BLANK"
