@@ -29,6 +29,8 @@
           <a
             v-if="homepageUrl"
             :href="homepageUrl"
+            :aria-label="`go to ${name}`"
+            :title="`go to ${name}`"
             target="_BLANK"
             rel="noreferrer"
           >

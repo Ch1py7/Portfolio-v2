@@ -7,7 +7,7 @@ const { isLight } = inject<LightMode>('isLight')!
 
 <template>
   <footer>
-    <p :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
+    <p :style="`color: ${isLight ? '#161616' : '#fafafa'}`">
       Made with <span class="heart">♥️</span> by Gerardo Garcia
     </p>
   </footer>
