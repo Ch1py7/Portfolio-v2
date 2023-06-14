@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { Fn, useRafFn, useWindowSize } from '@vueuse/core'
-import { computed, onMounted, reactive, ref } from 'vue'
+import { computed, inject, onMounted, reactive, ref } from 'vue'
+import { LightMode } from '../types/GeneralTypes'
+
+const { isLight } = inject<LightMode>('isLight')!
 
 const r180 = Math.PI
 const r90 = Math.PI / 2
 const r15 = Math.PI / 12
-const color = '#d1d1d120' // #88888825
+const color = '#107d6550' // #88888825
 
 const el = ref<HTMLCanvasElement | null>(null)
 
@@ -147,7 +150,11 @@ const mask = computed(() => 'radial-gradient(circle, transparent, black);')
 <template>
   <div
     class="canvas"
-    :style="`mask-image: ${mask};--webkit-mask-image: ${mask};`"
+    :style="`mask-image: ${mask};--webkit-mask-image: ${mask}; background: ${
+      isLight
+        ? 'radial-gradient(circle at -50rem 380rem, #0015ff 50%, #dfdfdf 100%)'
+        : 'radial-gradient(circle at -50rem 380rem, #47008d 0%, #050505 85%)'
+    }`"
   >
     <canvas ref="el" width="400" height="400" />
   </div>
