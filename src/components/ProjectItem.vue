@@ -29,14 +29,20 @@
           <a
             v-if="homepageUrl"
             :href="homepageUrl"
-            :aria-label="`go to ${name}`"
-            :title="`go to ${name}`"
+            :aria-label="`go to ${name} repository`"
+            :title="`go to ${name} repository`"
             target="_BLANK"
             rel="noreferrer"
           >
             <LinkChain :style="`stroke: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
-          <a :href="url" target="_BLANK" rel="noreferrer">
+          <a
+            :href="url"
+            target="_BLANK"
+            rel="noreferrer"
+            :aria-label="`go to ${name} repository`"
+            :title="`go to ${name} repository`"
+          >
             <Github :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
         </div>

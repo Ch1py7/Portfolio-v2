@@ -11,6 +11,7 @@
         src="../assets/bulbsum.webp"
         alt="Gerardo"
         aria-label="Gerardo"
+        title="Gerardo"
       />
       <!-- TODO: Add personal photo-->
       <template v-else>
@@ -19,6 +20,7 @@
             src="/src/assets/bulbsum_thumbsup.png"
             alt="picHireMe"
             aria-label="bulbsum hire me"
+            title="hire me"
           />
           <span class="pas8d7" style="width: 12rem">HIRE ME</span>
         </div>
@@ -27,6 +29,7 @@
             src="/src/assets/bulbsum_cry.png"
             alt="picPlease"
             aria-label="bulbsum please"
+            title="please"
           />
           <span class="pas8d7" style="width: 11rem">PLEASE</span>
         </div>
@@ -58,6 +61,7 @@
           href="https://github.com/Ch1py7/Portfolio-v2"
           target="_BLANK"
           rel="noreferrer"
+          title="portfolio"
           aria-label="portfolio"
           >portfolio</a
         >
