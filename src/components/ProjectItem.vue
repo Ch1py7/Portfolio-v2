@@ -1,7 +1,11 @@
 <template>
   <li>
-    <div class="container">
+    <div
+      class="container"
+      :style="`background-color: ${isLight ? '#a1a1a1' : '#161616'}`"
+    >
       <a
+        :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
         class="projectName"
         :href="homepageUrl"
         target="_BLANK"
@@ -27,10 +31,10 @@
             target="_BLANK"
             rel="noreferrer"
           >
-            <LinkChain />
+            <LinkChain :style="`stroke: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
           <a :href="url" target="_BLANK" rel="noreferrer">
-            <Github />
+            <Github :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`" />
           </a>
         </div>
       </div>
@@ -39,9 +43,13 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+import { LightMode } from '../types/GeneralTypes'
 import TechnologieIcon from './TechnologieIcon.vue'
 import Github from './icons/GitHub.vue'
 import LinkChain from './icons/LinkChain.vue'
+
+const { isLight } = inject<LightMode>('isLight')!
 
 defineProps<{
   name: string
@@ -75,7 +83,6 @@ defineProps<{
   display: grid;
   flex-direction: column;
   height: 100%;
-  background-color: #161616;
   padding: 1rem;
   border: solid 1px #505050;
   border-radius: 1.2rem;

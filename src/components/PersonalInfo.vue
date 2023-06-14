@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
     <div
       @click="isClick = !isClick"
       class="imgContainer"
@@ -48,9 +48,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const hover = ref<boolean>(false)
-const isClick = ref<boolean>(true)
+import { inject, ref } from 'vue'
+import { LightMode } from '../types/GeneralTypes'
+
+const { isLight } = inject<LightMode>('isLight')!
+const hover = ref(false)
+const isClick = ref(true)
 </script>
 
 <style scoped>
@@ -58,6 +61,8 @@ section {
   display: grid;
   grid-template-columns: 3fr 4fr;
   place-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
   padding: 4rem 1rem 4rem;
   font-family: 'Satoshi';
 }

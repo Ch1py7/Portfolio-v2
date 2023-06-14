@@ -2,11 +2,19 @@
   <nav>
     <a href="#"><img src="../assets/bulbsum.webp" alt="bulbsum" /></a>
     <ol class="menu">
+      <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
       <li>
-        <a href="/Gerardo CV.pdf" target="_BLANK" rel="noreferrer">CV</a>
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="/Gerardo CV.pdf"
+          target="_BLANK"
+          rel="noreferrer"
+          >CV</a
+        >
       </li>
       <li>
         <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
           href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
           target="_BLANK"
           rel="noreferrer"
@@ -14,18 +22,33 @@
         >
       </li>
       <li>
-        <a href="https://github.com/Ch1py7" target="_BLANK" rel="noreferrer"
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://github.com/Ch1py7"
+          target="_BLANK"
+          rel="noreferrer"
           >Github</a
         >
       </li>
     </ol>
-    <ListItem @click="menu = !menu" />
+    <ListItem
+      :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
+      @click="menu = !menu"
+    />
     <ol v-show="menu" class="isShow">
+      <TheButton v-for="prop in props" v-bind="prop" :key="prop" />
       <li>
-        <a href="/Gerardo CV.pdf" target="_BLANK" rel="noreferrer">CV</a>
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="/Gerardo CV.pdf"
+          target="_BLANK"
+          rel="noreferrer"
+          >CV</a
+        >
       </li>
       <li>
         <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
           href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
           target="_BLANK"
           rel="noreferrer"
@@ -33,13 +56,12 @@
         >
       </li>
       <li>
-        <a href="https://github.com/Ch1py7" target="_BLANK" rel="noreferrer"
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://github.com/Ch1py7"
+          target="_BLANK"
+          rel="noreferrer"
           >Github</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/Bulbsum" target="_BLANK" rel="noreferrer"
-          >Twitter</a
         >
       </li>
     </ol>
@@ -47,10 +69,44 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { inject, ref } from 'vue'
+import { Language, LightMode } from '../types/GeneralTypes'
+import TheButton from './TheButton.vue'
+import EnglishFlag from './icons/EnglishFlag.vue'
 import ListItem from './icons/ListItem.vue'
+import MoonIcon from './icons/MoonIcon.vue'
+import SpanishFlag from './icons/SpanishFlag.vue'
+import SunIcon from './icons/SunIcon.vue'
 
-const menu = ref<boolean>(false)
+const { isLight } = inject<LightMode>('isLight')!
+const { language } = inject<Language>('language')!
+
+const setLight = () => {
+  isLight.value = !isLight.value
+}
+
+const setLanguage = () => {
+  language.value = !language.value
+}
+
+const props = [
+  {
+    id: 1,
+    mode: isLight,
+    firstMode: SunIcon,
+    secMode: MoonIcon,
+    toggle: setLight,
+  },
+  {
+    id: 2,
+    mode: language,
+    firstMode: SpanishFlag,
+    secMode: EnglishFlag,
+    toggle: setLanguage,
+  },
+]
+
+const menu = ref(false)
 </script>
 
 <style scoped>
@@ -58,6 +114,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
   padding: 2rem;
   font-size: 1.6rem;
 }
@@ -101,10 +159,11 @@ nav img {
 
 .isShow {
   position: absolute;
-  display: none;
-  z-index: 1;
   top: 6rem;
   left: 0;
+  z-index: 1;
+  display: none;
+  align-items: center;
   width: 100%;
   padding: 1rem;
   gap: 1rem;

@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { inject } from 'vue'
+import { LightMode } from '../types/GeneralTypes'
+
+const { isLight } = inject<LightMode>('isLight')!
+</script>
 
 <template>
   <footer>
-    <p>Made with <span class="heart">♥️</span> by Gerardo Garcia</p>
+    <p :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
+      Made with <span class="heart">♥️</span> by Gerardo Garcia
+    </p>
   </footer>
 </template>
 
