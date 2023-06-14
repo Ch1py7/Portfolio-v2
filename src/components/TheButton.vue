@@ -10,8 +10,8 @@ defineProps<{
 
 <template>
   <button
-    :aria-label="mode.value ? 'light mode' : 'dark mode'"
-    :title='mode.value ? "light mode" : "dark mode"'
+    :aria-label="mode.value ? 'second mode' : 'first mode'"
+    :title="mode.value ? 'second mode' : 'first mode'"
     type="button"
     @click="toggle"
     :class="{ active: mode.value === true }"

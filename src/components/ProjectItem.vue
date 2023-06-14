@@ -2,7 +2,8 @@
   <li>
     <a
       :href="homepageUrl ? homepageUrl : url"
-      :aria-label="name"
+      :aria-label="`go to ${name}`"
+      :title="`go to ${name}`"
       target="_BLANK"
       rel="noreferrer"
       class="container"
