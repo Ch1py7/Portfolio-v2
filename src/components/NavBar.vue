@@ -1,70 +1,71 @@
 <template>
   <nav>
     <a href="#"><img src="../assets/bulbsum.webp" alt="bulbsum" /></a>
-    <ol class="menu">
+    <template style="display: flex; align-items: center; gap: 2rem;">
       <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="/Gerardo CV.pdf"
-          target="_BLANK"
-          rel="noreferrer"
-          >CV</a
-        >
-      </li>
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
-          target="_BLANK"
-          rel="noreferrer"
-          >LinkedIn</a
-        >
-      </li>
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="https://github.com/Ch1py7"
-          target="_BLANK"
-          rel="noreferrer"
-          >Github</a
-        >
-      </li>
-    </ol>
-    <ListItem
-      :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
-      @click="menu = !menu"
-    />
-    <ol v-show="menu" class="isShow">
-      <TheButton v-for="prop in props" v-bind="prop" :key="prop" />
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="/Gerardo CV.pdf"
-          target="_BLANK"
-          rel="noreferrer"
-          >CV</a
-        >
-      </li>
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
-          target="_BLANK"
-          rel="noreferrer"
-          >LinkedIn</a
-        >
-      </li>
-      <li>
-        <a
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-          href="https://github.com/Ch1py7"
-          target="_BLANK"
-          rel="noreferrer"
-          >Github</a
-        >
-      </li>
-    </ol>
+      <ol class="menu">
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="/Gerardo CV.pdf"
+            target="_BLANK"
+            rel="noreferrer"
+            >CV</a
+          >
+        </li>
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+            target="_BLANK"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="https://github.com/Ch1py7"
+            target="_BLANK"
+            rel="noreferrer"
+            >Github</a
+          >
+        </li>
+      </ol>
+      <ListItem
+        :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
+        @click="menu = !menu"
+      />
+      <ol v-show="menu" class="isShow">
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="/Gerardo CV.pdf"
+            target="_BLANK"
+            rel="noreferrer"
+            >CV</a
+          >
+        </li>
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+            target="_BLANK"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="https://github.com/Ch1py7"
+            target="_BLANK"
+            rel="noreferrer"
+            >Github</a
+          >
+        </li>
+      </ol>
+    </template>
   </nav>
 </template>
 
