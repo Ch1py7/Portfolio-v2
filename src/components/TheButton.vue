@@ -29,10 +29,17 @@ button {
   align-items: center;
   height: 2.4rem;
   width: 4.4rem;
+  margin-right: 1rem;
   border: solid 1px #343434;
   border-radius: 2.2rem;
   background-color: #2b2b2b;
   cursor: pointer;
+}
+
+@media(max-width: 430px) {
+  button {
+    margin-right: 0;
+  }
 }
 
 span {
@@ -50,6 +57,6 @@ span.anim {
 }
 
 button.active {
-  background-color: #bbb;
+  background-color: #cae4f9;
 }
 </style>

@@ -7,6 +7,7 @@
       target="_BLANK"
       rel="noreferrer"
       class="container"
+      :class='isLight ? "light" : "dark"'
       :style="`background-color: ${isLight ? '#cae4f9' : '#161616'}; color: ${
         isLight ? '#161616' : '#dfdfdf'
       }`"
@@ -97,12 +98,21 @@ defineProps<{
   padding: 1rem;
   border: solid 1px #505050;
   border-radius: 1.2rem;
-  transition: border 0.6s ease;
+  transition: border 0.6s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
 .container:hover {
-  border: solid 1px #9038ee;
   transform: translateY(-1rem)
+}
+
+.container.light:hover {
+  border: solid 1px #00ffe1;
+  filter: drop-shadow(0px 0px 10px #00ffe180)
+}
+
+.container.dark:hover {
+  border: solid 1px #9038ee;
+  filter: drop-shadow(0px 0px 10px #9038ee80)
 }
 
 li p {

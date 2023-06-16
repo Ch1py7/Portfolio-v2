@@ -28,12 +28,11 @@ section {
   flex-direction: column;
   max-width: 100rem;
   margin: 0 auto;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 h2 {
-  padding-left: 2rem;
-  font-size: 8rem;
+  font-size: 4rem;
 }
 
 @media (max-width: 768px) {

@@ -3,74 +3,108 @@
     <a href="#" title="home"
       ><img src="../assets/bulbsum.webp" alt="logo" aria-label="home"
     /></a>
-    <template style="display: flex; align-items: center; gap: 2rem">
-      <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
-      <ol class="menu">
-        <li>
-          <a
-            title="Go to my CV"
-            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="/Gerardo CV.pdf"
-            target="_BLANK"
-            rel="noreferrer"
-            >CV</a
-          >
-        </li>
-        <li>
-          <a
-            title="Go to my LinkedIn"
-            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
-            target="_BLANK"
-            rel="noreferrer"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a
-            title="Go to my Github"
-            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="https://github.com/Ch1py7"
-            target="_BLANK"
-            rel="noreferrer"
-            >Github</a
-          >
-        </li>
-      </ol>
-      <ListItem
-        :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
-        @click="menu = !menu"
-      />
-      <ol v-show="menu" class="isShow">
-        <li>
+    <ol class="menu">
+      <li>
+        <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
+      </li>
+      <li class="cvContainer" :class="isLight ? 'light' : 'dark'">
+        <p
+          @click="showCV = !showCV"
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+        >
+          CV
+        </p>
+        <div v-show="showCV" class="cvTypes">
           <a
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="/Gerardo CV.pdf"
+            href="/Gerardo-es-CV.pdf"
             target="_BLANK"
             rel="noreferrer"
-            >CV</a
+            >Spanish</a
           >
-        </li>
-        <li>
           <a
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+            href="/Gerardo-en-CV.pdf"
             target="_BLANK"
             rel="noreferrer"
-            >LinkedIn</a
+            >English</a
           >
-        </li>
-        <li>
+        </div>
+      </li>
+      <li :class="isLight ? 'light' : 'dark'">
+        <a
+          title="Go to my LinkedIn"
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+          target="_BLANK"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
+      </li>
+      <li :class="isLight ? 'light' : 'dark'">
+        <a
+          title="Go to my Github"
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://github.com/Ch1py7"
+          target="_BLANK"
+          rel="noreferrer"
+          >Github</a
+        >
+      </li>
+    </ol>
+    <ListItem
+      :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
+      @click="menu = !menu"
+    />
+    <ol v-show="menu" class="isShow">
+      <li>
+        <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
+      </li>
+      <li class="cvContainer" :class="isLight ? 'light' : 'dark'">
+        <p
+          @click="showCV = !showCV"
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+        >
+          CV
+        </p>
+        <div v-show="showCV" class="cvTypes">
           <a
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-            href="https://github.com/Ch1py7"
+            href="/Gerardo-es-CV.pdf"
             target="_BLANK"
             rel="noreferrer"
-            >Github</a
+            >Spanish</a
           >
-        </li>
-      </ol>
-    </template>
+          <a
+            :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+            href="/Gerardo-en-CV.pdf"
+            target="_BLANK"
+            rel="noreferrer"
+            >English</a
+          >
+        </div>
+      </li>
+      <li>
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
+          target="_BLANK"
+          rel="noreferrer"
+          @click="menu = !menu"
+          >LinkedIn</a
+        >
+      </li>
+      <li>
+        <a
+          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
+          href="https://github.com/Ch1py7"
+          target="_BLANK"
+          rel="noreferrer"
+          @click="menu = !menu"
+          >Github</a
+        >
+      </li>
+    </ol>
   </nav>
 </template>
 
@@ -98,22 +132,26 @@ const props = [
   },
 ]
 
+const showCV = ref(false)
 const menu = ref(false)
 </script>
 
 <style scoped>
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 100rem;
   margin: 0 auto;
   padding: 2rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 nav ol {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -128,11 +166,42 @@ li::after {
   width: 100%;
   height: 2px;
   content: '';
-  background-color: #6200ff;
-  box-shadow: 0 0 1rem #6200ff;
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.1s linear;
+}
+
+.cvContainer {
+  position: relative;
+}
+
+.cvTypes {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  gap: 2rem;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 430px) {
+  .cvTypes {
+    top: -3rem;
+    left: 10rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+li.dark:hover::after {
+  background-color: #6200ff;
+  box-shadow: 0 0 1rem #6200ff;
+}
+
+li.light:hover::after {
+  background-color: #00aeff;
+  box-shadow: 0 0 1rem #00aeff;
 }
 
 li:hover::after {
@@ -143,6 +212,17 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+nav p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 nav img {
@@ -168,7 +248,6 @@ nav img {
   .menu {
     display: none;
   }
-
   .isShow {
     display: flex;
     flex-direction: column;

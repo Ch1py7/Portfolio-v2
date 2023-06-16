@@ -47,32 +47,29 @@
       </h1>
       <p>
         I have 1 year of hands-on experience working on personal projects
-        utilizing cutting-edge technologies such as
+        utilizing technologies such as
         <strong>React</strong>
         and
-        <strong>TypeScript</strong>
-        .
+        <strong>TypeScript</strong>.
       </p>
       <p>
         Currently, I am actively expanding my skill set by learning
-        <strong>Vue 3</strong>
-        , as demonstrated by the creation of this
+        <strong>Vue 3</strong>, as demonstrated by the creation of this
         <a
           href="https://github.com/Ch1py7/Portfolio-v2"
           target="_BLANK"
           rel="noreferrer"
           title="portfolio"
           aria-label="portfolio"
+          :class="isLight ? 'light' : 'dark'"
           >portfolio</a
-        >
-        .
+        >.
       </p>
       <p>
         In addition, I possess some knowledge in scripting languages such as
         <strong>Bash</strong>
         and
-        <strong>Python</strong>
-        .
+        <strong>Python</strong>.
       </p>
     </div>
   </section>
@@ -153,15 +150,26 @@ span {
 }
 
 p a {
-  color: #ba59f7;
   font-weight: bold;
   transition: filter 0.1s linear;
   text-decoration: underline;
   text-decoration-style: solid;
 }
 
-p a:hover {
+p a.dark {
+color: #ba59f7;
+}
+
+p a.light {
+color: #007bff;
+}
+
+p a.dark:hover {
   filter: drop-shadow(0 0 2px #8000ff);
+}
+
+p a.light:hover {
+  filter: drop-shadow(0 0 2px #00d9ff);
 }
 
 @media (max-width: 768px) {
