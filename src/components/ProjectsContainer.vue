@@ -33,6 +33,7 @@ section {
 
 h2 {
   font-size: 4rem;
+  padding-left: 2rem;
 }
 
 @media (max-width: 768px) {
