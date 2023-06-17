@@ -84,7 +84,7 @@
           >
         </div>
       </li>
-      <li>
+      <li :class="isLight ? 'light' : 'dark'">
         <a
           :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
           href="https://www.linkedin.com/in/gerardogarcialopez-bulbsum/"
@@ -94,7 +94,7 @@
           >LinkedIn</a
         >
       </li>
-      <li>
+      <li :class="isLight ? 'light' : 'dark'">
         <a
           :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
           href="https://github.com/Ch1py7"
