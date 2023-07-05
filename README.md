@@ -15,10 +15,6 @@
         Getting Started
     </a>
     <span>&nbsp;⁘&nbsp;</span>
-    <a href="#-stack">
-        Stack
-    </a>
-    <span>&nbsp;⁘&nbsp;</span>
     <a href="#-license">
         License
     </a>
