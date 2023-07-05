@@ -116,9 +116,14 @@ defineProps<{
 }
 
 li p {
+  display: -webkit-box;
   padding: 1rem;
   font-size: 1.6rem;
   font-weight: 300;
+  overflow: hidden;
+  line-height: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .icons {

@@ -35,7 +35,7 @@ svg {
 }
 
 svg.light:hover {
-  filter: drop-shadow(0 0 2px #7300ff);
+  filter: drop-shadow(0 0 2px #161616);
 }
 
 svg.dark:hover {
