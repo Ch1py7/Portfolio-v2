@@ -65,4 +65,4 @@ Open up [http://localhost:5173/](http://localhost:5173/) to view the website ğŸš
 
 ## ğŸ“ License
 
-- [Apache-2.0 license](https://github.com/bulbsum/web/blob/main/LICENSE).
+- [MIT license](https://github.com/Ch1py7/Portfolio-v2/blob/main/LICENSE).
