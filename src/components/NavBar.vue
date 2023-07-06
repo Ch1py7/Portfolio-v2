@@ -1,19 +1,12 @@
 <template>
   <nav>
-    <a href="#" title="home"
-      ><img src="../assets/bulbsum.webp" alt="logo" aria-label="home"
-    /></a>
+    <a href="#" title="home"><img src="../assets/bulbsum.webp" alt="logo" aria-label="home" /></a>
     <ol class="menu">
       <li>
-        <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
+        <TheButton />
       </li>
       <li class="cvContainer" :class="isLight ? 'light' : 'dark'">
-        <p
-          @click="showCV = !showCV"
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-        >
-          CV
-        </p>
+        <p @click="showCV = !showCV" :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">CV</p>
         <div v-show="showCV" class="cvTypes">
           <a
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
@@ -52,21 +45,13 @@
         >
       </li>
     </ol>
-    <ListItem
-      :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`"
-      @click="menu = !menu"
-    />
+    <ListItem :style="`fill: ${isLight ? '#161616' : '#dfdfdf'}`" @click="menu = !menu" />
     <ol v-show="menu" class="isShow">
       <li>
-        <TheButton v-for="prop in props" v-bind="prop" :key="prop.id" />
+        <TheButton />
       </li>
       <li class="cvContainer" :class="isLight ? 'light' : 'dark'">
-        <p
-          @click="showCV = !showCV"
-          :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
-        >
-          CV
-        </p>
+        <p @click="showCV = !showCV" :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">CV</p>
         <div v-show="showCV" class="cvTypes">
           <a
             :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`"
@@ -113,24 +98,8 @@ import { inject, ref } from 'vue'
 import { LightMode } from '../types/GeneralTypes'
 import TheButton from './TheButton.vue'
 import ListItem from './icons/ListItem.vue'
-import MoonIcon from './icons/MoonIcon.vue'
-import SunIcon from './icons/SunIcon.vue'
 
 const { isLight } = inject<LightMode>('isLight')!
-
-const setLight = () => {
-  isLight.value = !isLight.value
-}
-
-const props = [
-  {
-    id: 1,
-    mode: isLight,
-    firstMode: SunIcon,
-    secMode: MoonIcon,
-    toggle: setLight,
-  },
-]
 
 const showCV = ref(false)
 const menu = ref(false)
@@ -216,6 +185,11 @@ nav a {
   font-weight: bold;
 }
 
+nav a img {
+  height: 4rem;
+  aspect-ratio: 2/1.5;
+}
+
 nav p {
   display: flex;
   justify-content: center;
@@ -223,10 +197,6 @@ nav p {
   line-height: 2rem;
   font-weight: bold;
   cursor: pointer;
-}
-
-nav img {
-  height: 4rem;
 }
 
 .isShow {
@@ -248,6 +218,7 @@ nav img {
   .menu {
     display: none;
   }
+
   .isShow {
     display: flex;
     flex-direction: column;

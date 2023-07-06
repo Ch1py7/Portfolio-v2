@@ -1,14 +1,6 @@
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 32 32"
-  >
-    <path
-      fill="#e44f26"
-      d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30L5.902 27.201z"
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+    <path fill="#e44f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30L5.902 27.201z" />
     <path fill="#f1662a" d="m16 27.858l8.17-2.265l1.922-21.532H16v23.797z" />
     <path
       fill="#ebebeb"

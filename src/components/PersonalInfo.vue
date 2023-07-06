@@ -2,7 +2,7 @@
   <section :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
     <div
       @click="isClick = !isClick"
-      class="imgContainer"
+      class="b75vg4"
       @mouseover="hover = true"
       @mouseleave="hover = false"
     >
@@ -17,7 +17,7 @@
       <template v-else>
         <div class="b75vg4" v-show="hover">
           <img
-            src="/src/assets/bulbsum_thumbsup.png"
+            src="/src/assets/bulbsum_thumbsup.webp"
             alt="picHireMe"
             aria-label="bulbsum hire me"
             title="hire me"
@@ -26,7 +26,7 @@
         </div>
         <div class="b75vg4" v-show="!hover">
           <img
-            src="/src/assets/bulbsum_cry.png"
+            src="/src/assets/bulbsum_cry.webp"
             alt="picPlease"
             aria-label="bulbsum please"
             title="please"
@@ -38,16 +38,14 @@
     <div>
       <h1
         :style="`color: ${isLight ? '#161616' : '#dfdfdf'}; filter: ${
-          isLight
-            ? 'drop-shadow(0 0 3px #00d9ff)'
-            : 'drop-shadow(0 0 3px #ff0000)'
+          isLight ? 'drop-shadow(0 0 3px #00d9ff)' : 'drop-shadow(0 0 3px #ff0000)'
         };`"
       >
         Hi, I'm Gerardo
       </h1>
       <p>
-        I have 1 year of hands-on experience working on personal projects
-        utilizing technologies such as
+        I have 1 year of hands-on experience working on personal projects utilizing technologies
+        such as
         <strong>React</strong>
         and
         <strong>TypeScript</strong>.
@@ -116,10 +114,10 @@ section {
   border-radius: 1rem;
 }
 
-section img {
+.b75vg4 img {
   position: absolute;
-  width: 20rem;
   height: 20rem;
+  aspect-ratio: 1.17;
 }
 
 section div {
@@ -157,11 +155,11 @@ p a {
 }
 
 p a.dark {
-color: #ba59f7;
+  color: #ba59f7;
 }
 
 p a.light {
-color: #007bff;
+  color: #007bff;
 }
 
 p a.dark:hover {
@@ -179,6 +177,7 @@ p a.light:hover {
     height: auto;
     text-align: center;
   }
+
   section div {
     padding: 0;
   }

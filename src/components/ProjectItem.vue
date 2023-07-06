@@ -7,7 +7,7 @@
       target="_BLANK"
       rel="noreferrer"
       class="container"
-      :class='isLight ? "light" : "dark"'
+      :class="isLight ? 'light' : 'dark'"
       :style="`background-color: ${isLight ? '#cae4f9' : '#161616'}; color: ${
         isLight ? '#161616' : '#dfdfdf'
       }`"
@@ -20,11 +20,7 @@
       </p>
       <div class="icons">
         <div>
-          <TechnologieIcon
-            v-for="tech in languages.edges"
-            v-bind="tech.node"
-            :key="tech.node.id"
-          />
+          <TechnologieIcon v-for="tech in languages.edges" v-bind="tech.node" :key="tech.node.id" />
         </div>
         <div>
           <a
@@ -102,17 +98,17 @@ defineProps<{
 }
 
 .container:hover {
-  transform: translateY(-1rem)
+  transform: translateY(-1rem);
 }
 
 .container.light:hover {
   border: solid 1px #00ffe1;
-  filter: drop-shadow(0px 0px 10px #00ffe180)
+  filter: drop-shadow(0px 0px 10px #00ffe180);
 }
 
 .container.dark:hover {
   border: solid 1px #9038ee;
-  filter: drop-shadow(0px 0px 10px #9038ee80)
+  filter: drop-shadow(0px 0px 10px #9038ee80);
 }
 
 li p {

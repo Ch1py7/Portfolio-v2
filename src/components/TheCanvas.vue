@@ -15,7 +15,7 @@ const el = ref<HTMLCanvasElement | null>(null)
 const { random } = Math
 const size = reactive(useWindowSize())
 
-const start = ref<Fn>(() => {})
+const start = ref<Fn>(() => { })
 const MIN_BRANCH = 30
 const len = ref(6)
 const stopped = ref(false)
@@ -147,14 +147,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    class="canvas"
-    :style="`background: ${
-      isLight
-        ? 'radial-gradient(circle at -50% 400%, #0015ff 50%, #f3f7fd 100%)'
-        : 'radial-gradient(circle at -50% 400%, #47008d 0%, #050505 85%)'
-    }`"
-  >
+  <div class="canvas" :style="`background: ${isLight
+      ? 'radial-gradient(circle at -50% 400%, #0015ff 50%, #f3f7fd 100%)'
+      : 'radial-gradient(circle at -50% 400%, #47008d 0%, #050505 85%)'
+    }`">
     <canvas ref="el" width="400" height="400" />
   </div>
 </template>

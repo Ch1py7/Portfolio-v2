@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { Ref } from 'vue'
-defineProps<{
-  mode: Ref
-  firstMode: object
-  secMode: object
-  toggle: () => void
-}>()
+import { inject } from 'vue'
+import { LightMode } from '../types/GeneralTypes'
+import MoonIcon from './icons/MoonIcon.vue'
+import SunIcon from './icons/SunIcon.vue'
+
+const { isLight } = inject<LightMode>('isLight')!
+
+const setLight = () => {
+  isLight.value = !isLight.value
+}
+
 </script>
 
 <template>
-  <button
-    :aria-label="mode.value ? 'second mode' : 'first mode'"
-    :title="mode.value ? 'second mode' : 'first mode'"
-    type="button"
-    @click="toggle"
-    :class="{ active: mode.value === true }"
-  >
-    <span :class="{ anim: mode.value === true }">
-      <component :is="mode.value ? firstMode : secMode" />
+  <button :aria-label="isLight ? 'second mode' : 'first mode'" :title="isLight ? 'second mode' : 'first mode'"
+    type="button" @click="setLight" :class="{ active: isLight === true }">
+    <span :class="{ anim: isLight === true }">
+      <SunIcon v-if="isLight === true" />
+      <MoonIcon v-else />
     </span>
   </button>
 </template>

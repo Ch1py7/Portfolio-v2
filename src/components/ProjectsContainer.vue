@@ -2,11 +2,7 @@
   <section :style="`color: ${isLight ? '#161616' : '#dfdfdf'}`">
     <h2>Projects</h2>
     <ul>
-      <Project
-        v-for="prop in data.user.pinnedItems.edges"
-        :key="prop.node.id"
-        v-bind="prop.node"
-      />
+      <Project v-for="prop in data.user.pinnedItems.edges" :key="prop.node.id" v-bind="prop.node" />
     </ul>
   </section>
 </template>
